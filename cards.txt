@@ -1,62 +1,62 @@
-Jake is smart
-The Earth is Flat
-Jake can't not roste
-Working in this class is helps
-Pluto is not a normal planet
-Global warming isnt real
-bowen is not not not not not not smart
-Jake is a good driver
-The sun is hot
-Aidan is not lazy
-when working with Aidan litle work gets done
-Mike isnt a total beast with monty in ros
-piggins were made by the government
-bad dragonis comoto dragon breeding company with the goal of making them a domesticated pet
-The earth is not flat
-The earth is not a perfect sphere
-Radiation kills
-Mike can spell much good
-global warming is bad
-memphis = kim john un
-fire herts
-aidan = bad at siege
-memphis is secretly tall but has prosthetic legs
-Aidan noob rages on rainbow 6 siege (and sucks at it)
-euan is memphis's twin and took his legs
-it smells like stale diretos
-Emma is tall
-it is raining outside
-Aidan is an idiot
-Bowen is cool
-Memphis cant reach the top shelf
-lamorie has baby legs
-bowen has aidans wallet
-Mike cant spell refrigir8tors
-mr malorie secretly works for nasa
-jake has a shark neckless
-jake like pizza
-it is still summer
-jakes computer is a dcu
-aidan has a youtube channel called blaze conroy
-sharks have arms
-Bowen doesnt have glasses
-kade has a crush on brad
-euan is swim
-mike is trash
-aidan is the better leader
-aidan has a future
-TBB is best
-Lamorie is cool
-mike is here legaly
-alienwear is a good brand
-the sky is blue
-Lamorie has baby legs
-Jake is a noob
-PC masterace
-jake is a good driver
-Mike is not a squeaker
-aidan has a wallet
-gaming laptops are good
-mike can do basic motor functions
-siege has small maps
-mike is cool
+Jake is smart;false
+the earth is flat;false
+Jake can't not roast;false
+working in this class is helps;true
+pluto is not a normal planet;true
+global warming isn't real;false
+Bowen is not not not not not not smart;true
+Jake is a good driver;false
+the sun is hot;true
+Aidan is not lazy;false
+when working with Aidan little work gets done;true
+Mike isn't a total beast with monty in rainbow six siege;false
+pidgins were made by the government;true
+bad dragon is a comoto dragon breeding company with the goal of making them a domesticated pet;false
+the earth is not flat;true
+the earth is not a perfect sphere;true
+radiation kills;true
+Mike can spell much good;true
+global warming is bad;true
+Memphis = kim john un;false
+fire hurts;false
+Aidan = bad at siege;true
+Memphis is secretly tall but has prosthetic legs;false
+Aidan noob rages on rainbow 6 siege (and sucks at it);true
+Euan is Memphis's twin and took his legs;false
+it smells like stale diretos;false
+Emma is tall;false
+it is raining outside;false
+Aidan is an idiot;true
+Bowen is cool;true
+Memphis cant reach the top shelf;true
+LaMorie has baby legs;true
+Bowen has aidans wallet;false
+Mike cant spell refrigir8tors;true
+Mr MaLorie secretly works for nasa;false
+Jake has a shark neckless;true
+Jake like pizza;true
+it is still summer;false
+Jakes computer is a dcu;true
+Aidan has a youtube channel called blaze conroy;true
+sharks have arms;false
+Bowen doesnt have glasses;false
+Kade has a crush on brad;true
+Euan is swim;true
+Mike is trash;true
+Aidan is the better leader;false
+Aidan has a future;false
+tbb is best;false
+LaMorie is cool;true
+Mike is here legaly;true
+alienwear is a good brand;false
+the sky is blue;true
+LaMorie has baby legs;true
+Jake is a noob;true
+pc masterace;true
+Jake is a good driver;false
+Mike is not a squeaker;false
+Aidan has a wallet;false
+gaming laptops are good;false
+Mike can do basic motor functions;false
+siege has small maps;true
+Mike is cool;false
