@@ -6,7 +6,8 @@ you also want it clean off any lagging carage returns from the end of the line
 @return {array} the contents of the string an array, 1 line per array index;
 */
 function stringParser(string) {
-
+  var lines = text.match(/^.*((\r\n|\n|\r)|$)/gm);
+  
 }
 /* arrayReader(array, split)
 take an array of strings in the format of text 1 split text 2
@@ -19,7 +20,7 @@ makes a new array where each element is an object.
 @return {array} an array of objects keyed with str and bool and negated : false
 */
 function arrayReader(array, split) {
-  
+
 }
 /* stringReader(string, split=";")
 a wrapper function for stringParser and arrayReader
