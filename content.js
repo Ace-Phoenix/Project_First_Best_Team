@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+const content = `
+Jake is smart;false
+=======
+>>>>>>> a9d34dbfbe056f4802d14d66ae4558654da19e8a
 const content = `Jake is smart;false
 the earth is flat;false
 Jake can't not roast;false
