@@ -1,5 +1,4 @@
-const content = `
-Jake is smart;false
+const content = `Jake is smart;false
 the earth is flat;false
 Jake can't not roast;false
 working in this class is helps;true
