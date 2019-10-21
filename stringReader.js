@@ -8,6 +8,13 @@ you also want it clean off any lagging carage returns from the end of the line
 function stringParser(string) {
   var lines = string.match(/^.*((\r\n|\n|\r)|$)/gm);
   for (var i = 0; i < lines.length; i++) {
+    if (lines[i] < lines.length) {
+      lines[i].slice(0, lines[i].length -1);
+      i++
+    }
+    else {
+      i++
+    }
   }
   return lines;
 }
