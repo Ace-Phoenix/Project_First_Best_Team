@@ -12,7 +12,7 @@ function stringParser(string) {
     lines[i] = lines[i].slice(0, lines[i].length-1);
 }
 else{
- continue;   
+ continue;
 }
   }
   return lines;
@@ -50,3 +50,8 @@ a wrapper function for stringParser and arrayReader
 @pram split=";" {string} where to split the string
 @return {array} an array of objects keyed str and bool
 */
+function stringReader(string, split = ";") {
+  var stringPars = stringParser(string)
+  var arrayRead = arrayReader(array, split)
+  return {str:stringPars, bool:arrayRead}
+}
