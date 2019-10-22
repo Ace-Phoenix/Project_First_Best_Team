@@ -27,8 +27,15 @@ makes a new array where each element is an object.
 @param split: {string} the item to split at
 @return {array} an array of objects keyed with str and bool and negated : false
 */
-function arrayReader(array, split) {
+function arrayReader(array, splitt) {
+var arraySplt = [];
+var array2 ={}
+var ret = 0;
+for(var j = 0; j < array.length; j++){
+arraySplt[j] = array[j].split(splitt);
 
+}
+return array2;
 }
 /* stringReader(string, split=";")
 a wrapper function for stringParser and arrayReader
