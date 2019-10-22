@@ -29,13 +29,20 @@ makes a new array where each element is an object.
 */
 function arrayReader(array, splitt) {
 var arraySplt = [];
-var array2 ={}
+var array2 ={ str:"",
+bool:true};
 var ret = 0;
 for(var j = 0; j < array.length; j++){
 arraySplt[j] = array[j].split(splitt);
-
+array2.str = arraySplt[j][0];
+array2.bool = arraySplt[j][1];
+arraySplt[j] = array2;
+var array2 = {
+ str:"",
+ bool:true
+};
 }
-return array2;
+return arraySplt;
 }
 /* stringReader(string, split=";")
 a wrapper function for stringParser and arrayReader
@@ -43,6 +50,3 @@ a wrapper function for stringParser and arrayReader
 @pram split=";" {string} where to split the string
 @return {array} an array of objects keyed str and bool
 */
-function stringReader(string, split = ";") {
-
-}
