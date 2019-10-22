@@ -37,5 +37,7 @@ a wrapper function for stringParser and arrayReader
 @return {array} an array of objects keyed str and bool
 */
 function stringReader(string, split = ";") {
-
+  var stringPars = stringParser(string)
+  var arrayRead = arrayReader(array, split)
+  return {str:stringPars, bool:arrayRead}
 }
