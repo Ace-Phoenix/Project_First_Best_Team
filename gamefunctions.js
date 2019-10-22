@@ -16,7 +16,6 @@ function uniqueIndex(max, number){
     array.length = max;
     for(var i = 0; i < number; i++){
         var num = randNum(max);
-        console.log(num)
         if (array[num] !== "") {
         numbers[i] = num;
         }
@@ -27,7 +26,8 @@ function uniqueIndex(max, number){
         array[num] = "";
 }
 return numbers;
-}/* andEval(condition1, condition2)
+}
+/* andEval(condition1, condition2)
 takes two conditions and makes a new condition out of them based on their combined
 and state and combines the text of the two conditions. Cleans up text some
 @param condition1 {object} an object with str and bool keys
