@@ -34,8 +34,8 @@ bool:true};
 var ret = 0;
 for(var j = 0; j < array.length; j++){
 arraySplt[j] = array[j].split(splitt);
-array2.str = arraySplt[j][0];
-array2.bool = arraySplt[j][1];
+array2.str = arraySplt[j][0].trim();
+array2.bool = arraySplt[j][1].trim();
 arraySplt[j] = array2;
 var array2 = {
  str:"",
@@ -51,7 +51,6 @@ a wrapper function for stringParser and arrayReader
 @return {array} an array of objects keyed str and bool
 */
 function stringReader(string, split = ";") {
-  var stringPars = stringParser(string)
-  var arrayRead = arrayReader(array, split)
-  return {str:stringPars, bool:arrayRead}
+  var stringPars = stringParser(string);
+  return arrayReader(stringPars, split)
 }
