@@ -22,7 +22,7 @@ function uniqueIndex(max, number){
         }
         else{
         var num = randNum(max);
-        i--
+        i--;
         }
         array[num] = "";
 }
@@ -34,7 +34,10 @@ and state and combines the text of the two conditions. Cleans up text some
 @param condition2 {object} an object with str and bool keys
 @return {object} an object with str and bool keys
 */
-
+function andEval(condition1,condition2){
+    var newCondition = condition1.bool && condition2.bool;
+    return {str:condition1.str +" and "+ condition2.str,bool:newCondition};
+}
 /* orEval(condition1, condition2)
 takes two conditions and makes a new condition out of them based on their combined
 or state and combines the text of the two conditions. Cleans up text some
@@ -42,3 +45,7 @@ or state and combines the text of the two conditions. Cleans up text some
 @param condition2 {object} an object with str and bool keys
 @return {object} an object with str and bool keys
 */
+function orEval(condition1,condition2){
+    var newCondition = condition1.bool || condition2.bool;
+    return {str:condition1.str +" or "+ condition2.str,bool:newCondition};
+}
