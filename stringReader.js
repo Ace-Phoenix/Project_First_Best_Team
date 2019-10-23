@@ -36,10 +36,17 @@ for(var j = 0; j < array.length; j++){
 arraySplt[j] = array[j].split(splitt);
 array2.str = arraySplt[j][0].trim();
 array2.bool = arraySplt[j][1].trim();
+if (array2.bool == "true") {
+ array2.negBool = "false"
+}
+else{
+ array2.negBool="true"
+}
 arraySplt[j] = array2;
 var array2 = {
  str:"",
- bool:true
+ bool:true,
+ negBool:true
 };
 }
 return arraySplt;

@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Komodo Project File - DO NOT EDIT -->
 <project id="1916a502-a618-49b3-8747-b6faac0e7ad5" kpf_version="5" name="start_new1.komodoproject">
-<file id="07d8a5de-2a39-4fdc-a833-6cda7c9381a6" idref="1916a502-a618-49b3-8747-b6faac0e7ad5" name="classwork.css" url="classwork.css">
+<file id="221ee9bb-31bf-45bb-8527-2ee516c747cd" idref="1916a502-a618-49b3-8747-b6faac0e7ad5" name="stringReader.js" url="stringReader.js">
 </file>
-<file id="78e3943f-3530-479f-bd7d-fd827c40db34" idref="1916a502-a618-49b3-8747-b6faac0e7ad5" name="const.js" url="const.js">
+<file id="27c55f8d-9b7b-46e0-b46a-1ed50807b3df" idref="1916a502-a618-49b3-8747-b6faac0e7ad5" name="index.html" url="index.html">
 </file>
-<file id="fd9488f3-a51f-495a-9249-e781d3e62329" idref="1916a502-a618-49b3-8747-b6faac0e7ad5" name="start.html" url="start.html">
+<file id="6cafbaf7-0c07-4537-8ad1-d8a5a38ffbd9" idref="1916a502-a618-49b3-8747-b6faac0e7ad5" name="content.js" url="content.js">
+</file>
+<file id="73b0f919-3d39-41fa-a29a-16f510118342" idref="1916a502-a618-49b3-8747-b6faac0e7ad5" name="style.css" url="style.css">
+</file>
+<file id="f676f068-019f-4b86-ac12-37867c83b22f" idref="1916a502-a618-49b3-8747-b6faac0e7ad5" name="gamefunctions.js" url="gamefunctions.js">
 </file>
 <preference-set idref="1916a502-a618-49b3-8747-b6faac0e7ad5" id="project" preftype="project">
   <long id="prefs_version">1</long>
