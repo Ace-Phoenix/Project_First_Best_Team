@@ -27,29 +27,22 @@ makes a new array where each element is an object.
 @param split: {string} the item to split at
 @return {array} an array of objects keyed with str and bool and negated : false
 */
-function arrayReader(array, splitt) {
-var arraySplt = [];
-var array2 ={ str:"",
-bool:true};
-var ret = 0;
-for(var j = 0; j < array.length; j++){
-arraySplt[j] = array[j].split(splitt);
-array2.str = arraySplt[j][0].trim();
-array2.bool = arraySplt[j][1].trim();
-if (array2.bool == "true") {
- array2.negBool = "false"
-}
-else{
- array2.negBool="true"
-}
-arraySplt[j] = array2;
-var array2 = {
- str:"",
- bool:true,
- negBool:true
-};
-}
-return arraySplt;
+function arrayReader(array, split) {
+  var retArr = [];
+  for (var i = 0; i < array.length; i++) {
+    var obj = {};//<-Obj is {}
+    var line = array[i].split(split);//splist array when you have it split
+    obj.str = line[0].trim();//.trim removes white whitespace
+    obj.negated = false;
+    if (line[1].trim() === "true") {
+      obj.bool = true;
+    }
+    else {
+      obj.boo = false;
+    }
+    retArr.push(obj);
+  }
+  return retArr;
 }
 /* stringReader(string, split=";")
 a wrapper function for stringParser and arrayReader
