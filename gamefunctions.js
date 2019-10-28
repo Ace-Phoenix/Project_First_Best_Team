@@ -66,6 +66,39 @@ and uses it make a question of depths between 1 - maxDepth combined statement le
 @param negate {float} chance of a negation happening
 @return a new object with the same general format
 */
+function makeQuestion(conditions, maxDepth=randNum(3), negate=.2){
+    var neg = "neg";
+    var or = "or";
+    var and = "and";
+    var array = [neg,and,and,or,or];
+    var condiArray = [];
+    for(var i = 0; i < maxDepth; i++){
+        var randNeg = array[Math.floor(Math.random()*array.length)];
+        var condi = conditions[randNum(conditions.length)];
+        var condi2 = conditions[randNum(conditions.length)];
+        console.log(maxDepth);
+        if (randNeg == neg) {
+            condiArray[i] = notEval(condi);
+        }
+        if (maxDepth > 1 && i>0) {
+i++;
+}
+        condi = conditions[randNum(conditions.length)];
+        condi2 = conditions[randNum(conditions.length)];
+        if (randNeg == and) {
+            condiArray[i] = andEval(condi,condi2);
+    }
+            if (maxDepth > 1 && i>0) {
+i++;
+}
+        condi = conditions[randNum(conditions.length)];
+        condi2 = conditions[randNum(conditions.length)];
+        if (randNeg == or) {
+            condiArray[i] = orEval(condi,condi2);
+    }
+    }
+    return condiArray;
+}
 /* makeSentence(condition)
 Makes a (likely run-on) sentence out of a conditional stored in an object with the keys str, bool, and negated. It does the following: if negated then it capitalized the i in "it is not the case" and adds a period to the end of the str. If it is not negated then it adds the phrase "It is the case " to the start of the str and adds a period to the end of the string.
 @param condition {array} an array of objects formatted as listed above
