@@ -58,7 +58,11 @@ front of it, sets the negated key to true
 @return {object} an object with str, bool, and negated keys
 */
 function notEval(condition){
-  
+  var obj = ();
+  if (condition.bool == true) {
+    return
+  }
+  return  "it is not the case that " + condition;
 }
 /* makeQuestion(conditions, maxDepth=3, negate=.2)
 takes an array of condition objects formated {str: text, bool: bool, negated: bool}
@@ -76,7 +80,7 @@ If it is not negated then it adds the phrase "It is the case " to the start of t
 @return {object} a new object with the same general format
 */
 function makeSentence(condition) {
-  if () {
+  if (condition) {
 
   }
   else {
