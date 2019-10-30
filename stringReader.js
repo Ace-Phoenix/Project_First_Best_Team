@@ -31,7 +31,7 @@ function arrayReader(array, split) {
   var retArr = [];
   for (var i = 0; i < array.length; i++) {
     var obj = {};//<-Obj is {}
-    var line = array[i].split(split);//splist array when you have it split
+    var line = array[i].split(split);//splits array when you have it split
     obj.str = line[0].trim();//.trim removes white whitespace
     obj.negated = false;
     if (line[1].trim() === "true") {
