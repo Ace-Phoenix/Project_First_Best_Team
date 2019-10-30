@@ -17,15 +17,15 @@ function uniqueIndex(max, number){
     for(var i = 0; i < number; i++){
         var num = randNum(max);
         if (array[num] !== "") {
-        numbers[i] = num;
+          numbers[i] = num;
         }
         else{
-        var num = randNum(max);
-        i--;
+          var num = randNum(max);
+          i--;
         }
         array[num] = "";
-}
-return numbers;
+      }
+  return numbers;
 }
 /* andEval(condition1, condition2)
 takes two conditions and makes a new condition out of them based on their combined
@@ -35,9 +35,8 @@ and state and combines the text of the two conditions. Cleans up text some
 @return {object} an object with str and bool keys
 */
 function andEval(condition1,condition2){
-  var cond1 = condition1.trim();
-  var cond2 = condition2.trim();
-  return cond1 + " and " + cond2;
+  var retObj = {}
+
 }
 /* orEval(condition1, condition2)
 takes two conditions and makes a new condition out of them based on their combined
@@ -58,11 +57,7 @@ front of it, sets the negated key to true
 @return {object} an object with str, bool, and negated keys
 */
 function notEval(condition){
-  var obj = ();
-  if (condition.bool == true) {
-    return
-  }
-  return  "it is not the case that " + condition;
+  return {"it is not the case that " + condition.str, bool : !condtion.bool, negated: !condition.negated};
 }
 /* makeQuestion(conditions, maxDepth=3, negate=.2)
 takes an array of condition objects formated {str: text, bool: bool, negated: bool}
@@ -71,40 +66,37 @@ and uses it make a question of depths between 1 - maxDepth combined statement le
 @param maxDepth {int} number of conditionals to be put together at max
 @param negate {float} chance of a negation happening
 @return a new object with the same general format
+
+1.make a return obj
+2.find the actual depth
+  If depth is 1 ... pick one thing at rendom off condition ... check if we negate, returns
+  Otherwise - 1. pick our things - uniqueIndex(condtions.length, depth)
+              2. start doing the big return
+                1. make a for loop (things.length -1)
+                2. in the for loop, want to determine if we use and/or
+                [42, 11, 27, 32, 0]
+                  0,  1,  2,  3, 4
+                we need 2 things, but we make a for loop we get 1 thing =/
+                if we use i for itterator we could overcome this in 1 of 3 ways
+                way #1 i & i+1  make our loop using length -2 rather than -1
+                way #2 i & i-1  we could set i to 1 initally or if i = 0 continue
+                  Why are ways 1 & 2 kind of bad
+                  First step is to pick first 2
+                    ex 42, 11
+                  The second set and there on
+                   ex 11, 27
+                  So if we were to fix that, we need to come up with some way to skip a sequence
+                  If we do that, when all is said and done, we still have to add all the sets together.
+                    ex {42, 11} {27, 32}
+                  We would have to create a way of dealing with having an uneven number of things
+
+                way #3 for i in length of things pop off the end we will have to treat the first one different as with way 2 above
+                  way #3 when we have the first thing check if it is negated
+                  make the retObj = to the first thing
+                  following the first thing figure oyt and or or and negation
+                  retObj = which ever eval(new item, retObj)
+              3.return retObj;
 */
-function makeQuestion(conditions, maxDepth=randNum(3), negate=.2){
-    var neg = "neg";
-    var or = "or";
-    var and = "and";
-    var array = [neg,and,and,or,or];
-    var condiArray = [];
-    for(var i = 0; i < maxDepth; i++){
-        var randNeg = array[Math.floor(Math.random()*array.length)];
-        var condi = conditions[randNum(conditions.length)];
-        var condi2 = conditions[randNum(conditions.length)];
-        console.log(maxDepth);
-        if (randNeg == neg) {
-            condiArray[i] = notEval(condi);
-        }
-        if (maxDepth > 1 && i>0) {
-i++;
-}
-        condi = conditions[randNum(conditions.length)];
-        condi2 = conditions[randNum(conditions.length)];
-        if (randNeg == and) {
-            condiArray[i] = andEval(condi,condi2);
-    }
-            if (maxDepth > 1 && i>0) {
-i++;
-}
-        condi = conditions[randNum(conditions.length)];
-        condi2 = conditions[randNum(conditions.length)];
-        if (randNeg == or) {
-            condiArray[i] = orEval(condi,condi2);
-    }
-    }
-    return condiArray;
-}
 /* makeSentence(condition)
 Makes a (likely run-on) sentence out of a conditional stored in an object with the keys str, bool, and negated.
 It does the following: if negated then it capitalized the i in "it is not the case" and adds a period to the end of the str.
@@ -113,10 +105,11 @@ If it is not negated then it adds the phrase "It is the case " to the start of t
 @return {object} a new object with the same general format
 */
 function makeSentence(condition) {
-  if (condition) {
-
+  if (condition.negated) {
+    condition.str = "I" + condition.str.slice(1) + ".";
   }
   else {
-    "It is the case " + condition + "."
+    condition.str = "It is the case " + condition.str + ".";
   }
+  return condition;
 }
