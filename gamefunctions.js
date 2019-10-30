@@ -35,9 +35,11 @@ and state and combines the text of the two conditions. Cleans up text some
 @return {object} an object with str and bool keys
 */
 function andEval(condition1,condition2){
-  var cond1 = condition1.trim();
-  var cond2 = condition2.trim();
-  return cond1 + " and " + cond2;
+  var retObj = {};
+  retObj.str = condition1.str + " and " + condition2.str;
+  retObj.negated = condition1.negated;
+  retObj.bool = condition1.bool && condition2.bool;
+  return retObj;
 }
 /* orEval(condition1, condition2)
 takes two conditions and makes a new condition out of them based on their combined
@@ -47,18 +49,20 @@ or state and combines the text of the two conditions. Cleans up text some
 @return {object} an object with str and bool keys
 */
 function orEval(condition1,condition2){
-  var cond1 = condition1.trim();
-  var cond2 = condition2.trim();
-  return cond1 + " or " + cond2;
+  var retObj = {};
+  retObj.str = condition1.str + " or " + condition2.str;
+  retObj.negated = condition1.negated;
+  retObj.bool = condition1.bool || condition2.bool;
+  return retObj;
 }
 /* notEval(condition)
-takes a condtion, negates it's value, adds the text "it is not the case that" to the
+takes a condition, negates it's value, adds the text "it is not the case that" to the
 front of it, sets the negated key to true
 @param condtion {object} an object with str and bool keys
 @return {object} an object with str, bool, and negated keys
 */
 function notEval(condition){
-  
+  return {str: "It is not the case that " + condition.str, bool: !condition.bool, negated: !condition.negated};
 }
 /* makeQuestion(conditions, maxDepth=3, negate=.2)
 takes an array of condition objects formated {str: text, bool: bool, negated: bool}
@@ -82,24 +86,42 @@ function makeQuestion(conditions, maxDepth=randNum(3), negate=.2){
         if (randNeg == neg) {
             condiArray[i] = notEval(condi);
         }
-        if (maxDepth > 1 && i>0) {
-i++;
-}
         condi = conditions[randNum(conditions.length)];
         condi2 = conditions[randNum(conditions.length)];
         if (randNeg == and) {
             condiArray[i] = andEval(condi,condi2);
     }
-            if (maxDepth > 1 && i>0) {
-i++;
-}
         condi = conditions[randNum(conditions.length)];
         condi2 = conditions[randNum(conditions.length)];
         if (randNeg == or) {
             condiArray[i] = orEval(condi,condi2);
     }
     }
-    return condiArray;
+    console.log(condiArray)
+    var testCondi1 = condiArray[0];
+    var testCondi2 = condiArray[1];
+    var testCondi3 = condiArray[2];
+    var negatedd = false;
+    if (testCondi1.negated == true) {
+      negatedd = true;
+}
+    if (testCondi2 !== undefined && testCondi2.negated == true) {
+      negatedd = true;
+
+}
+     if (testCondi3 !== undefined && testCondi3.negated == true) {
+        negatedd = true;
+}
+
+    if (condiArray.length == 2) {
+          return {str:testCondi1.str + " " + testCondi2.str, negated:negatedd, bool:testCondi1.bool && testCondi2.bool};
+}
+    if (condiArray.length == 3) {
+          return {str:testCondi1.str + " " + testCondi2.str + " " + testCondi3.str,negated:negatedd, bool:testCondi1.bool && testCondi2.bool && testCondi3.bool};
+}
+    if (condiArray.length == 1) {
+          return {str:testCondi1.str, negated:negatedd, bool:testCondi1.bool};
+}
 }
 /* makeSentence(condition)
 Makes a (likely run-on) sentence out of a conditional stored in an object with the keys str, bool, and negated.
@@ -107,12 +129,12 @@ It does the following: if negated then it capitalized the i in "it is not the ca
 If it is not negated then it adds the phrase "It is the case " to the start of the str and adds a period to the end of the string.
 @param condition {array} an array of objects formatted as listed above
 @return {object} a new object with the same general format
+*//*mk for loop cz we want to determin && or || fr look one time... use i fr iterator... way 1.i and i +1... 2. i and i-1
+if is the case... make loop with langth -2 instead of minus 1... use of continue if i = 0...
+way 3. for i in length of the array using pop to pop of the end of the array will have to treat the last on different from the
+other last ones?... first thing check if is negated make the return object equal to the first thing following the first thing
+there ar emore than one things inside of it figure out && or ||, and go through way three. have ret obj new item ret obj
+return ret obj...
 */
 function makeSentence(condition) {
-  if () {
-
-  }
-  else {
-    "It is the case " + condition + "."
-  }
 }

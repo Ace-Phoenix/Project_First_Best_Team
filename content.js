@@ -1,7 +1,7 @@
 const content = `Jake is smart;false
 the earth is flat;false
 Jake can't not roast;false
-working in this class is helps;true
+working in this class helps;true
 pluto is not a normal planet;true
 global warming isn't real;false
 Bowen is not not not not not not smart;true

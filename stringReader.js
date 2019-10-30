@@ -38,7 +38,7 @@ function arrayReader(array, split) {
       obj.bool = true;
     }
     else {
-      obj.boo = false;
+      obj.bool = false;
     }
     retArr.push(obj);
   }
