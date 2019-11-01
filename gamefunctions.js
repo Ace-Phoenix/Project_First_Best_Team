@@ -158,7 +158,7 @@ function makeQuestion(conditions, maxDepth=randNum(3), negate=.2){
         var strCondi = "";
         var bools = [""];
     for (var j = 0; j < maxDepth; j++) {
- strCondi += condiArray[j].str + " ";
+ strCondi += condiArray[j].str + " and ";
  if (j===0 && condiArray.length == 1) {
 bools[0] = condiArray[j];
 }
