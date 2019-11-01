@@ -15,12 +15,12 @@ function uniqueIndex(max, number){
     var numbers = [];
     array.length = max;
     for(var i = 0; i < number; i++){
-        var num = randNum(max);
+        var num = randNum(max) -1;
         if (array[num] !== "") {
           numbers[i] = num;
         }
         else{
-          var num = randNum(max);
+          var num = randNum(max) -1;
           i--;
         }
         array[num] = "";
@@ -71,10 +71,10 @@ and uses it make a question of depths between 1 - maxDepth combined statement le
 @param maxDepth {int} number of conditionals to be put together at max
 @param negate {float} chance of a negation happening
 @return a new object with the same general format
-
-1.make a return obj
+*/
+/*1.make a return obj
 2.find the actual depth
-  If depth is 1 ... pick one thing at rendom off condition ... check if we negate, returns
+  If depth is 1 ... pick one thing at random off condition ... check if we negate, returns
   Otherwise - 1. pick our things - uniqueIndex(condtions.length, depth)
               2. start doing the big return
                 1. make a for loop (things.length -1)
@@ -82,9 +82,10 @@ and uses it make a question of depths between 1 - maxDepth combined statement le
                 [42, 11, 27, 32, 0]
                   0,  1,  2,  3, 4
                 we need 2 things, but we make a for loop we get 1 thing =/
-                if we use i for itterator we could overcome this in 1 of 3 ways
-                way #1 i & i+1  make our loop using length -2 rather than -1
+                if we use i for itterator we could overcome this in 1 of 3 ways*/
+/*                way #1 i & i+1  make our loop using length -2 rather than -1
                 way #2 i & i-1  we could set i to 1 initally or if i = 0 continue
+
                   Why are ways 1 & 2 kind of bad
                   First step is to pick first 2
                     ex 42, 11
@@ -94,14 +95,41 @@ and uses it make a question of depths between 1 - maxDepth combined statement le
                   If we do that, when all is said and done, we still have to add all the sets together.
                     ex {42, 11} {27, 32}
                   We would have to create a way of dealing with having an uneven number of things
-
-                way #3 for i in length of things pop off the end we will have to treat the first one different as with way 2 above
+*/
+/*                way #3 for i in length of things pop off the end we will have to treat the first one different as with way 2 above
                   way #3 when we have the first thing check if it is negated
                   make the retObj = to the first thing
                   following the first thing figure oyt and or or and negation
                   retObj = which ever eval(new item, retObj)
               3.return retObj;
 */
+//function makeQuestion(conditions, maxDepth = 3, negate = .2) {
+//  var retObj = {};
+//  var depth = randNum(maxDepth);
+//  if (depth == 1) {
+//    var condi = conditions[randNum(conditions.length)];
+//    if (Math.random() < negate) { return notEval(condi); }
+//    else { return condi; }
+//  }
+//  else {
+//    var ind = uniqueIndex(conditions.length, depth);
+//    for (var i = 0; i < depth -1; i++) {
+//      if (i == 0) {
+//        retObj = conditions[ind.pop()];
+//        if (Math.random() < negate) { retObj = notEval(retObj); }
+//        else {continue;}
+//      }
+//      else {
+//        var ais = conditions[ind.pop()];
+//        if (Math.random() < negate) { ais = notEval(ais); }
+//        var pipe = Math.random();
+//        if (pipe < .5) {  retObj = orEval(ais, retObj); }
+//        else { retObj = andEval(ais, retObj); }
+//      }
+//    }
+//    return retObj;
+//  }
+
 function makeQuestion(conditions, maxDepth=randNum(3), negate=.2){
     var neg = "neg";
     var or = "or";
