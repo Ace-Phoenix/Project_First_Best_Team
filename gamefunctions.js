@@ -110,48 +110,44 @@ function makeQuestion(conditions, maxDepth=randNum(3), negate=.2){
     var condiArray = [];
     for(var i = 0; i < maxDepth; i++){
         var randNeg = array[Math.floor(Math.random()*array.length)];
-        var condi = conditions[randNum(conditions.length)];
-        var condi2 = conditions[randNum(conditions.length)];
-        console.log(maxDepth);
+        var condi = conditions[Math.floor(Math.random()*conditions.length)];
+        var condi2 = conditions[Math.floor(Math.random()*conditions.length)];
         if (randNeg == neg) {
             condiArray[i] = notEval(condi);
         }
-        condi = conditions[randNum(conditions.length)];
-        condi2 = conditions[randNum(conditions.length)];
+        condi = conditions[Math.floor(Math.random()*conditions.length)];
+        condi2 = conditions[Math.floor(Math.random()*conditions.length)];
         if (randNeg == and) {
             condiArray[i] = andEval(condi,condi2);
     }
-        condi = conditions[randNum(conditions.length)];
-        condi2 = conditions[randNum(conditions.length)];
+        condi = conditions[Math.floor(Math.random()*conditions.length)];
+        condi2 = conditions[Math.floor(Math.random()*conditions.length)];
         if (randNeg == or) {
             condiArray[i] = orEval(condi,condi2);
     }
     }
-    console.log(condiArray)
-    var testCondi1 = condiArray[0];
-    var testCondi2 = condiArray[1];
-    var testCondi3 = condiArray[2];
-    var negatedd = false;
-    if (testCondi1.negated == true) {
-      negatedd = true;
+        var negatedd = false;
+        var strCondi = "";
+        var bools = [""];
+    for (var j = 0; j < maxDepth; j++) {
+ strCondi += condiArray[j].str + " ";
+ if (j===0 && condiArray.length == 1) {
+bools[0] = condiArray[j];
 }
-    if (testCondi2 !== undefined && testCondi2.negated == true) {
-      negatedd = true;
-
+ if (j === 0 && condiArray.length >= 2) {
+   bools[0] = condiArray[j].bool && condiArray[j+1].bool;
 }
-     if (testCondi3 !== undefined && testCondi3.negated == true) {
+if (j < maxDepth.length && j !== 0|| j!== 1) {
+  bools[0] = bools[0] && condiArray[j].bool;
+}
+if (j == maxDepth.length) {
+bools[0] = bools[0] && condiArray[j];
+}
+      if (condiArray[j].negated === true) {
         negatedd = true;
 }
-
-    if (condiArray.length == 2) {
-          return {str:testCondi1.str + " " + testCondi2.str, negated:negatedd, bool:testCondi1.bool && testCondi2.bool};
 }
-    if (condiArray.length == 3) {
-          return {str:testCondi1.str + " " + testCondi2.str + " " + testCondi3.str,negated:negatedd, bool:testCondi1.bool && testCondi2.bool && testCondi3.bool};
-}
-    if (condiArray.length == 1) {
-          return {str:testCondi1.str, negated:negatedd, bool:testCondi1.bool};
-}
+          return {str:strCondi, negated:negatedd, bool:bools[0]};
 }
 /* makeSentence(condition)
 Makes a (likely run-on) sentence out of a conditional stored in an object with the keys str, bool, and negated.
@@ -159,12 +155,6 @@ It does the following: if negated then it capitalized the i in "it is not the ca
 If it is not negated then it adds the phrase "It is the case " to the start of the str and adds a period to the end of the string.
 @param condition {array} an array of objects formatted as listed above
 @return {object} a new object with the same general format
-*//*mk for loop cz we want to determin && or || fr look one time... use i fr iterator... way 1.i and i +1... 2. i and i-1
-if is the case... make loop with langth -2 instead of minus 1... use of continue if i = 0...
-way 3. for i in length of the array using pop to pop of the end of the array will have to treat the last on different from the
-other last ones?... first thing check if is negated make the return object equal to the first thing following the first thing
-there ar emore than one things inside of it figure out && or ||, and go through way three. have ret obj new item ret obj
-return ret obj...
 */
 function makeSentence(condition) {
   if (condition.negated) {
