@@ -45,3 +45,147 @@ if (prompts == "q") {
 }
 }
 
+var playGame = true;
+var score = 0;
+var questions = stringReader(content);
+
+while (playGame == true) {
+    var mk = makeQuestion(questions);
+    var prompts = prompt(score +" "+mk.str);
+    if (prompts == 1 && mk.bool == true) {
+        score += 1;
+}
+    if (prompts == 1 && mk.bool == false) {
+        score -= 1;
+}
+    if (prompts == 2 && mk.bool == false) {
+        score += 1;
+}
+    if (prompts == 2 && mk.bool == true) {
+        score -= 1;
+}
+if (prompts == "q") {
+    playGame = false;
+}
+}
+
+var playGame = true;
+var score = 0;
+var questions = stringReader(content);
+
+while (playGame == true) {
+    var mk = makeQuestion(questions);
+    var prompts = prompt(score +" "+mk.str);
+    if (prompts == 1 && mk.bool == true) {
+        score += 1;
+}
+    if (prompts == 1 && mk.bool == false) {
+        score -= 1;
+}
+    if (prompts == 2 && mk.bool == false) {
+        score += 1;
+}
+    if (prompts == 2 && mk.bool == true) {
+        score -= 1;
+}
+if (prompts == "q") {
+    playGame = false;
+}
+}
+
+var playGame = true;
+var score = 0;
+var questions = stringReader(content);
+
+while (playGame == true) {
+    var mk = makeQuestion(questions);
+    var prompts = prompt(score +" "+mk.str);
+    if (prompts == 1 && mk.bool == true) {
+        score += 1;
+}
+    if (prompts == 1 && mk.bool == false) {
+        score -= 1;
+}
+    if (prompts == 2 && mk.bool == false) {
+        score += 1;
+}
+    if (prompts == 2 && mk.bool == true) {
+        score -= 1;
+}
+if (prompts == "q") {
+    playGame = false;
+}
+}
+
+var playGame = true;
+var score = 0;
+var questions = stringReader(content);
+
+while (playGame == true) {
+    var mk = makeQuestion(questions);
+    var prompts = prompt(score +" "+mk.str);
+    if (prompts == 1 && mk.bool == true) {
+        score += 1;
+}
+    if (prompts == 1 && mk.bool == false) {
+        score -= 1;
+}
+    if (prompts == 2 && mk.bool == false) {
+        score += 1;
+}
+    if (prompts == 2 && mk.bool == true) {
+        score -= 1;
+}
+if (prompts == "q") {
+    playGame = false;
+}
+}
+
+var playGame = true;
+var score = 0;
+var questions = stringReader(content);
+
+while (playGame == true) {
+    var mk = makeQuestion(questions);
+    var prompts = prompt(score +" "+mk.str);
+    if (prompts == 1 && mk.bool == true) {
+        score += 1;
+}
+    if (prompts == 1 && mk.bool == false) {
+        score -= 1;
+}
+    if (prompts == 2 && mk.bool == false) {
+        score += 1;
+}
+    if (prompts == 2 && mk.bool == true) {
+        score -= 1;
+}
+if (prompts == "q") {
+    playGame = false;
+}
+}
+
+var playGame = true;
+var score = 0;
+var questions = stringReader(content);
+
+while (playGame == true) {
+    var mk = makeQuestion(questions);
+    var prompts = prompt(score +" "+mk.str);
+    if (prompts == 1 && mk.bool == true) {
+        score += 1;
+}
+    if (prompts == 1 && mk.bool == false) {
+        score -= 1;
+}
+    if (prompts == 2 && mk.bool == false) {
+        score += 1;
+}
+    if (prompts == 2 && mk.bool == true) {
+        score -= 1;
+}
+if (prompts == "q") {
+    playGame = false;
+}
+}
+
